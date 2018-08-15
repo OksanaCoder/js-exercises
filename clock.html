@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock</title>
+</head>
+<body onload="setTime(); setInterval('setTime()', 1000 )">
+  <span id="clock"></span>
+
+  <script type="text/javascript">
+
+  	function setTime() {
+    var current = new Date();
+    var hours = current.getHours();
+    var minutes = current.getMinutes();
+    var seconds = current.getSeconds();
+    minutes = ( minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+    
+    var output = "Current time " + hours + " : " + minutes + " : " + seconds; 
+    document.querySelector('#clock').innerHTML = output;
+  }
+  
+  </script>
+</body>
+</html>
